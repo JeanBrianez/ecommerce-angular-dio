@@ -4,12 +4,6 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, map, retry } from 'rxjs/operators';
 import { Book } from "../models/books.model";
 
-type BooksApiGetResponse = {
-  _embedded: {
-    bookList: Array<Book>;
-  };
-};
-
 @Injectable({
   providedIn: 'root'
 })
@@ -25,14 +19,10 @@ export class ProductRepoService {
     
    constructor( private readonly http: HttpClient){}
 
-    /*public getBooks() {
-      return this.http.get(this.url)
-    }*/
-
-    public getAll(): Observable<Array<Book>> {
+    public getAll(): Observable<Book[]> {
       return this.http
-      .get<BooksApiGetResponse>(this.url)
-      .pipe(map((response) => response._embedded.bookList));
+      .get<Book[]>(this.url)
+      .pipe(map((response) => response));
     }
 
     public getOne(bookId: number): Observable<Book> {

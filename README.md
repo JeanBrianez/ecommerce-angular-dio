@@ -2,9 +2,9 @@
 
 - Neste projeto é feito um frontend de uma loja de livros em Angular;
 - Projeto feito como requisito para o Bootcamp Santander Fullstack Developer, organizado pelas empresas F1RST, DIO e Santander;
-- Reproduzido por mim baseado na aula da mentora [Camila Cavalcante](https://github.com/cami-la);
-- Também usa a pasta de infra sugerido pela mesma para facilitar o uso de padrões de DateTime, que se encontra [aqui](https://github.com/cami-la/academia-digital).
-* Podendo ser consumida pelo projeto Frontend Angular feito no mesmo Bootcamp, que se encontra [aqui](https://github.com/JeanBrianez/ecommerce-angular-dio);
+- Reproduzido por mim baseado na aula da mentora [Nathalia Corrêa](https://github.com/naatscs);
+- Utiliza tbm de aulas dos mentores [Wiley Marques](https://github.com/wilmarques) e [Ivo Soares](https://github.com/ivosoares) para o desenvolvimento;
+- Deve ser usado para consumir a API desenvolvida pelo projeto Backend Bookstore feito em Java Spring no mesmo Bootcamp, que se encontra [aqui](https://github.com/JeanBrianez/ecommerce-angular-dio);
 * Ícones do [Flaticon](https://www.flaticon.com/).
 
 ## Minhas modificações:

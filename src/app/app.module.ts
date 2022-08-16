@@ -14,6 +14,9 @@ import { ProductItemComponent } from './components/book-cart/product-list/produc
 import { HttpClientModule } from '@angular/common/http';
 import {ProductRepoService} from './services/product-repository.service';
 import { DetailsComponent } from './components/book-cart/details/details.component';
+import { CreateProductComponent } from './components/book-cart/create-product/create-product.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EditProductComponent } from './components/book-cart/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -25,11 +28,14 @@ import { DetailsComponent } from './components/book-cart/details/details.compone
     ProductListComponent,
     FiltersComponent,
     ProductItemComponent,
-    DetailsComponent
+    DetailsComponent,
+    CreateProductComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [ProductRepoService],

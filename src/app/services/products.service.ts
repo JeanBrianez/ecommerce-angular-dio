@@ -9,13 +9,19 @@ import { ProductRepoService } from './product-repository.service';
 })
 export class ProductsService {
   public books = new BehaviorSubject<Array<Book>>([]);
+  private loaded = false;
 
   constructor(private readonly repository: ProductRepoService) { }
 
   public LoadBooks(): Observable<Array<Book>> {
-    return this.repository
-    .getAll()
-    .pipe(tap((books) => this.books.next(books)));
+    if (this.loaded === true) {
+      return this.books;
+    }
+
+    return this.repository.getAll().pipe(
+      tap((books) => this.books.next(books)),
+      tap(() => (this.loaded = true)),
+      );
   }
 
   public getBook(bookId: number): Observable<Book> {

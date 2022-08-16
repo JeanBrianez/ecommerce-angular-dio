@@ -1,0 +1,38 @@
+<h1>Novo Livro</h1>
+<form [formGroup]="newBookForm" (ngSubmit)="onSubmit()">
+
+    <label for="title">Título: </label>
+    <input id="title" type="text" placeholder="Título" aria-label="title" formControlName="title" required />
+
+    <label for="isbn">ISBN: </label>
+    <input id="isbn" type="text" placeholder="ISBN" aria-label="isbn" formControlName="isbn" required />
+
+    <label for="author">Autor: </label>
+    <input id="author" type="text" placeholder="Autor" aria-label="author" formControlName="author" required />
+    
+    <label for="publisher">Editora: </label>
+    <input id="publisher" type="text" placeholder="Editora" aria-label="publisher" formControlName="publisher" required />
+ 
+    <label for="language">Língua: </label>
+    <input id="language" type="text" placeholder="Língua" aria-label="language" formControlName="language" required />
+ 
+    <label for="genre">Gênero: </label>
+    <input id="genre" type="text" placeholder="Gênero" aria-label="genre" formControlName="genre" required />
+
+    <label for="category">Gategoria: </label>
+    <input id="categoria" type="text" placeholder="Categoria" aria-label="category" formControlName="category" required />
+ 
+    <label for="publicationYear">Ano de Publicação: </label>
+    <input id="publicationYear" type="number" placeholder="Ano de Publicação" aria-label="publicationYear" formControlName="publicationYear" required />
+
+    <label for="price">Preço: </label>
+    <input id="price" type="number" placeholder="Preço" aria-label="price" formControlName="price" required />
+ 
+    <label for="quantity">Quantidade: </label>
+    <input id="quantity" type="number" placeholder="Quantidade" aria-label="quantity" formControlName="quantity" required />
+
+    <label for="img">Imagem de Capa: </label>
+    <input id="img" type="text" placeholder="Url Capa" aria-label="cover img" formControlName="img" required />
+
+    <button type="submit" [disabled]="!newBookForm.valid">Enviar</button>
+</form>

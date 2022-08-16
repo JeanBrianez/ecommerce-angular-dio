@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { take } from 'rxjs/operators';
+import { ProductsService } from 'src/app/services/products.service';
 import { Author } from '../../../../models/author.model';
 import { Book } from '../../../../models/books.model';
 import { Publisher } from '../../../../models/publisher.model';
@@ -10,8 +12,6 @@ import { Publisher } from '../../../../models/publisher.model';
 })
 export class ProductItemComponent implements OnInit {
 
-  url : string = "";
-
   @Input()
   livro!: Book;
 
@@ -21,14 +21,13 @@ export class ProductItemComponent implements OnInit {
   @Input()
   editora!: Publisher;
 
-  constructor() {
-
-   }
+  constructor(private readonly service: ProductsService) {}
 
   ngOnInit(): void {
-
-
-
+    this.service.LoadBooks().pipe(take(1)).subscribe();
   }
 
+  public deleteBook(book: Book): void {
+    this.service.deleteBook(book).pipe(take(1)).subscribe();
+  }
 }
